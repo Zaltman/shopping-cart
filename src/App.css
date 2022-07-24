@@ -1,3 +1,8 @@
+body {
+  background-color: #282c34;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -11,4 +16,70 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.navigation {
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about > p {
+  margin: 7px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation > * {
+  padding: 15px;
+  margin: 15px;
+}
+
+.navigation > ul > * {
+  margin: 15px;
+}
+
+.navButtons {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navButtons > * {
+  color: white;
+  text-decoration: none;
+}
+
+.item {
+  display: flex;
+  align-items: stretch;
+  width: 70%;
+  max-height: 500px;
+  max-width: 500px;
+  object-fit: cover;
+}
+
+img {
+  position: relative;
+  object-fit: cover;
+  width: 50%;
+  max-height: 500px;
+  max-width: 500px;
+  margin: 50px;
+}
+
+.shopPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textCont {
+  align-self: center;
 }
