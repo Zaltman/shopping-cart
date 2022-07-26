@@ -1,12 +1,14 @@
 import Item from './item';
-import items from '../assetts/items';
-export default function ShopPage() {
-  console.log(items);
+import itemsArray from '../assetts/items';
+import { useState } from 'react';
+export default function ShopPage(props) {
+  const shopItems = props.shopItems;
+  const handleAddToCartClick = props.handleAddToCartClick;
   return (
     <div className="shopPage">
       <h2>Shop page</h2>
-      {items.map((item) => (
-        <Item item={item} key={item.id}></Item>
+      {shopItems.map((item) => (
+        <Item item={item} key={item.id} handleAddToCartClick={handleAddToCartClick} shopItems={shopItems}></Item>
       ))}
     </div>
   );

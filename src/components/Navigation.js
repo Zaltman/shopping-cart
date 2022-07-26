@@ -1,28 +1,34 @@
 import { Link } from 'react-router-dom';
-
+import { HiTemplate } from 'react-icons/hi';
+import { HiShoppingCart, HiSearch } from 'react-icons/hi';
+import { IconContext } from 'react-icons/lib';
 export default function Navigation() {
   return (
-    <div className="navigation">
-      <Link to={'/'}>
-        <h3 className="logo">LOGO</h3>
-      </Link>
-      <ul className="navButtons">
+    <IconContext.Provider value={{ className: 'react-icons' }}>
+      <div className="navigation">
         <Link to={'/'}>
-          <li>Home</li>
+          <HiTemplate id="logo" />
         </Link>
-        <Link to={'/shop'}>
-          <li>Shop</li>
-        </Link>
-
-        <Link to={'/about'}>
-          <li>About</li>
-        </Link>
-
-        <li>Search</li>
-        <Link to={'/cart'}>
-          <li>Cart </li>
-        </Link>
-      </ul>
-    </div>
+        <ul className="navButtons">
+          <Link to={'/'}>
+            <li className="navButton">Home</li>
+          </Link>
+          <Link to={'/shop'}>
+            <li className="navButton">Shop</li>
+          </Link>
+          <Link to={'/about'}>
+            <li className="navButton">About</li>
+          </Link>
+          <li>
+            <HiSearch className="navButton" />
+          </li>
+          <Link to={'/cart'}>
+            <li>
+              <HiShoppingCart id="cartIcon" className="navButton" />
+            </li>
+          </Link>
+        </ul>
+      </div>
+    </IconContext.Provider>
   );
 }
