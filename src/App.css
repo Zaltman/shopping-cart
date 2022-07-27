@@ -36,9 +36,22 @@ a {
   /* padding: 0px; */
 }
 
+#cartCont {
+  /* position: absolute; */
+}
+
 #cartIcon {
-  color: white;
-  font-size: 24px;
+  /* color: white; */
+  position: relative;
+  font-size: 34px;
+  top: 13px;
+}
+
+#amountInCart {
+  color: #282c34;
+  position: relative;
+  top: -21px;
+  left: 1px;
 }
 
 .navigation {
@@ -147,22 +160,8 @@ img {
   vertical-align: middle;
   cursor: pointer;
 }
-/* #goBackBtn {
-  background-color: #282c34;
-  font-size: 45px;
-  border: 0px;
-
-  padding: 0px;
-  align-self: flex-start;
-} */
 
 #goBackLink {
   color: white;
   text-align: left;
 }
-
-/* #addToCartBtn {
-  vertical-align: middle;
-
-  font-size: x-large;
-} */

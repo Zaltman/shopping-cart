@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { HiTemplate } from 'react-icons/hi';
 import { HiShoppingCart, HiSearch } from 'react-icons/hi';
 import { IconContext } from 'react-icons/lib';
-export default function Navigation() {
+export default function Navigation(props) {
+  const amountInCart = props.amountInCart;
   return (
     <IconContext.Provider value={{ className: 'react-icons' }}>
       <div className="navigation">
@@ -23,8 +24,9 @@ export default function Navigation() {
             <HiSearch className="navButton" />
           </li>
           <Link to={'/cart'}>
-            <li>
+            <li id="cartCont">
               <HiShoppingCart id="cartIcon" className="navButton" />
+              <div id="amountInCart">{amountInCart}</div>
             </li>
           </Link>
         </ul>

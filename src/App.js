@@ -11,7 +11,7 @@ import itemsArray from './assetts/items';
 
 function App() {
   const [shopItems, setShopItems] = useState(itemsArray);
-
+  const [amountInCart, setAmountInCart] = useState(0);
   function handleAddToCartClick(e) {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
@@ -20,14 +20,13 @@ function App() {
       if (item.id == itemId) {
         item.isInCart = true;
       }
-      console.log(newShopItems);
     });
-    // console.log(e.target.dataset.id);
+    setAmountInCart(amountInCart + 1);
   }
   return (
     <Router>
       <div className="App">
-        <Navigation></Navigation>
+        <Navigation amountInCart={amountInCart}></Navigation>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
