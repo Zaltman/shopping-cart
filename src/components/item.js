@@ -13,7 +13,7 @@ export default function Item(props) {
 
   return (
     <div className="item">
-      <img src={img}></img>
+      <img onLoad={props.onLoad} src={img}></img>
       <div className="textCont">
         <h2 className="itemName"> {name}</h2>
         <button>

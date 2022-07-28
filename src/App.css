@@ -165,3 +165,7 @@ img {
   color: white;
   text-align: left;
 }
+
+.invisible {
+  display: none;
+}

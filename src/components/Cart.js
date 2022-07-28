@@ -3,6 +3,8 @@ export default function Cart(props) {
   console.log(shopItems);
   return (
     <div className="cart">
+      <div> Cart </div>
+
       {shopItems.map((item) => {
         if (item.isInCart === false) {
           return;
@@ -14,7 +16,6 @@ export default function Cart(props) {
             </div>
           );
       })}
-      <div> Cart </div>
     </div>
   );
 }

@@ -12,6 +12,8 @@ import itemsArray from './assetts/items';
 function App() {
   const [shopItems, setShopItems] = useState(itemsArray);
   const [amountInCart, setAmountInCart] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  
   function handleAddToCartClick(e) {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
@@ -26,6 +28,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        
         <Navigation amountInCart={amountInCart}></Navigation>
         <Routes>
           <Route path="/" element={<Homepage />} />
