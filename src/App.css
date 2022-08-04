@@ -187,6 +187,7 @@ a {
 .itemName {
   padding: 0px;
   margin: 0px;
+  width: 200px;
 }
 
 img {
@@ -223,7 +224,12 @@ img {
 }
 
 .textCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-self: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .goBackIcon {
@@ -274,4 +280,18 @@ img {
 path {
   height: 0px;
   width: 0px;
+}
+
+.moreDetails {
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+.removeAddUnitBtn {
+  cursor: pointer;
+  font-size: large;
+}
+
+.cartBtns {
+  display: flex;
 }

@@ -4,7 +4,6 @@ import { BsCartPlus } from 'react-icons/bs';
 import React from 'react';
 
 export default function Item(props) {
-  const shopItems = props.shopItems;
   const price = props.item.price;
   const currency = props.item.currency;
   const name = props.item.name;
@@ -17,9 +16,9 @@ export default function Item(props) {
       <img onLoad={props.onLoad} src={img}></img>
       <div className="textCont">
         <h2 className="itemName"> {name}</h2>
-        <button>
-          <Link to={`/shop/${id}`}>more details</Link>
-        </button>
+        <Link className="moreDetails" to={`/shop/${id}`}>
+          more details
+        </Link>
         <h2>
           {price}
           {currency}

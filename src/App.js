@@ -16,7 +16,6 @@ function App() {
   function handleAddToCartClick(e) {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
-    console.log(e.target);
     newShopItems = newShopItems.map((item) => {
       if (item.id == itemId) {
         item.isInCart = true;
@@ -25,6 +24,34 @@ function App() {
     });
     setAmountInCart(amountInCart + 1);
   }
+
+  function handleIncreaseUnitAmount(e) {
+    let id = e.target.dataset.id;
+    let newShopItems = [...shopItems];
+    newShopItems.map((item) => {
+      if (item.id === id) {
+        if (item.amount > 0) {
+          item.amount += 1;
+        } else item.isInCart = false;
+      }
+    });
+    setShopItems(newShopItems);
+  }
+
+  function handleDecreaseUnitAmount(e) {
+    let id = e.target.dataset.id;
+    let newShopItems = [...shopItems];
+    newShopItems.map((item) => {
+      if (item.id === id) {
+        item.amount -= 1;
+        if (item.amount == 0) {
+          item.isInCart = false;
+        }
+      }
+    });
+    setShopItems(newShopItems);
+  }
+
   return (
     <Router>
       <div className="App">
@@ -32,7 +59,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart shopItems={shopItems} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                shopItems={shopItems}
+                handleIncreaseUnitAmount={handleIncreaseUnitAmount}
+                handleDecreaseUnitAmount={handleDecreaseUnitAmount}
+              />
+            }
+          />
           <Route
             path="/shop"
             element={<ShopPage handleAddToCartClick={handleAddToCartClick} shopItems={shopItems} />}

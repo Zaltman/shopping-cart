@@ -1,6 +1,9 @@
+import { IoBagRemoveSharp, IoBagAddSharp } from 'react-icons/io5';
+
 export default function Cart(props) {
   let shopItems = props.shopItems;
-  console.log(shopItems);
+  const handleIncreaseUnitAmount = props.handleIncreaseUnitAmount;
+  const handleDecreaseUnitAmount = props.handleDecreaseUnitAmount;
   let priceTotal = 0;
   return (
     <div className="cart">
@@ -23,6 +26,14 @@ export default function Cart(props) {
                   <div>
                     Total :{item.price * item.amount}
                     {item.currency}{' '}
+                  </div>
+                  <div className="cartBtns">
+                    <div onClick={handleDecreaseUnitAmount} data-id={item.id} className="removeAddUnitBtn">
+                      <IoBagRemoveSharp pointerEvents="none" />
+                    </div>
+                    <div onClick={handleIncreaseUnitAmount} data-id={item.id} className="removeAddUnitBtn">
+                      <IoBagAddSharp pointerEvents="none" />
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,5 @@
 import Item from './item';
-import itemsArray from '../assetts/items';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import LoadingSpinner from './Spinner';
 import './spinner.css';
 import React from 'react';
