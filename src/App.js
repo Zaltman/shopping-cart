@@ -16,13 +16,14 @@ function App() {
   function handleAddToCartClick(e) {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
-    newShopItems = newShopItems.map((item) => {
+    newShopItems.map((item) => {
       if (item.id == itemId) {
         item.isInCart = true;
         item.amount += 1;
       }
     });
     setAmountInCart(amountInCart + 1);
+    setShopItems(newShopItems);
   }
 
   function handleIncreaseUnitAmount(e) {

@@ -13,7 +13,7 @@ export default function Item(props) {
 
   return (
     <div className="item">
-      <img onLoad={props.onLoad} src={img}></img>
+      <img onLoad={props.onLoad} src={img} alt="Item"></img>
       <div className="textCont">
         <h2 className="itemName"> {name}</h2>
         <Link className="moreDetails" to={`/shop/${id}`}>

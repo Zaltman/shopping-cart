@@ -37,7 +37,7 @@ export default function Cart(props) {
                   </div>
                 </div>
               </div>
-              <img className="cartImg" src={item.img}></img>
+              <img className="cartImg" src={item.img} alt="Item"></img>
             </div>
           );
         }
