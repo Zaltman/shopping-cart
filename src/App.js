@@ -17,7 +17,7 @@ function App() {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
     newShopItems.map((item) => {
-      if (item.id == itemId) {
+      if (item.id === itemId) {
         item.isInCart = true;
         item.amount += 1;
       }
@@ -45,10 +45,11 @@ function App() {
     newShopItems.map((item) => {
       if (item.id === id) {
         item.amount -= 1;
-        if (item.amount == 0) {
+        if (item.amount === 0) {
           item.isInCart = false;
         }
       }
+      return;
     });
     setShopItems(newShopItems);
   }
