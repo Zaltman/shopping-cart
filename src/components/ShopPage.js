@@ -3,6 +3,7 @@ import itemsArray from '../assetts/items';
 import { useEffect, useState } from 'react';
 import LoadingSpinner from './Spinner';
 import './spinner.css';
+import React from 'react';
 
 export default function ShopPage(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +18,12 @@ export default function ShopPage(props) {
     }
   };
 
+  React.useEffect(function setupListener() {
+    return function cleanupListener() {
+      window.removeEventListener('onClick', handleAddToCartClick);
+    };
+  });
+
   // useEffect(() => {
   //   setTimeout(() => {
   //     setIsLoading(false);
@@ -27,7 +34,7 @@ export default function ShopPage(props) {
     <div className="shopPage">
       {isLoading ? <LoadingSpinner /> : ''}
       <div className={isLoading ? 'invisible' : ''}>
-        <h2>Shop page</h2>
+        <h1>Shop </h1>
         {shopItems.map((item) => (
           <Item
             item={item}

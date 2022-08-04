@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { BsCartPlus } from 'react-icons/bs';
+import React from 'react';
 
 export default function Item(props) {
   const shopItems = props.shopItems;
@@ -22,10 +23,10 @@ export default function Item(props) {
         <h2>
           {price}
           {currency}
-          <IconContext.Provider value={{ className: 'addToCartIcon' }}>
-            <BsCartPlus onClick={handleAddToCartClick} data-id={id} id="addToCartBtn"></BsCartPlus>
-          </IconContext.Provider>
         </h2>
+        <IconContext.Provider value={{ className: 'addToCartIcon' }}>
+          <BsCartPlus onClick={handleAddToCartClick} data-id={id} id="addToCartBtn"></BsCartPlus>
+        </IconContext.Provider>
       </div>
     </div>
   );

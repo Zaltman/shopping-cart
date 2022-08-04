@@ -12,15 +12,15 @@ import itemsArray from './assetts/items';
 function App() {
   const [shopItems, setShopItems] = useState(itemsArray);
   const [amountInCart, setAmountInCart] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  
+
   function handleAddToCartClick(e) {
     let itemId = e.target.dataset.id;
     let newShopItems = [...shopItems];
+    console.log(e.target);
     newShopItems = newShopItems.map((item) => {
-      // console.log(item);
       if (item.id == itemId) {
         item.isInCart = true;
+        item.amount += 1;
       }
     });
     setAmountInCart(amountInCart + 1);
@@ -28,7 +28,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        
         <Navigation amountInCart={amountInCart}></Navigation>
         <Routes>
           <Route path="/" element={<Homepage />} />

@@ -7,8 +7,8 @@ import { BsCartPlus } from 'react-icons/bs';
 
 export default function ItemDetails(props) {
   const itemId = useParams().id;
-  console.log(useParams());
-  console.log(props);
+  // console.log(useParams());
+  // console.log(props);
   let domElement;
   const handleAddToCartClick = props.handleAddToCartClick;
   {
